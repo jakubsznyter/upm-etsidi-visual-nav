@@ -1,0 +1,37 @@
+[Unit]
+
+Description=My Auto-Start Node
+
+# Ensure network is up before starting
+
+After=network-online.target
+
+Wants=network-online.target
+
+
+
+[Service]
+User=__USER__
+
+Type=simple
+
+
+
+
+Environment="ROS_DOMAIN_ID=0"
+
+ExecStart=%h/robot_ws/hardware_host/scripts/start_robot.sh
+
+
+
+# Restart automatically if it crashes
+
+Restart=always
+
+RestartSec=10
+
+
+
+[Install]
+
+WantedBy=multi-user.target

@@ -1,0 +1,105 @@
+<ui version="4.0">
+  <class>MainWindow</class>
+  <widget class="QMainWindow" name="MainWindow">
+    <property name="geometry">
+      <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>400</width>
+        <height>300</height>
+      </rect>
+    </property>
+    <property name="windowTitle">
+      <string>teleop_twist_qt</string>
+    </property>
+    <widget class="QWidget" name="centralwidget">
+      <layout class="QGridLayout" name="gridLayout">
+        <!-- Joysticks -->
+        <item row="0" column="0">
+          <widget class="JoyPad" name="joyPadL" native="true">
+            <property name="minimumSize">
+              <size>
+                <width>100</width>
+                <height>100</height>
+              </size>
+            </property>
+          </widget>
+        </item>
+        <item row="0" column="1">
+          <widget class="JoyPad" name="joyPadR" native="true">
+            <property name="minimumSize">
+              <size>
+                <width>100</width>
+                <height>100</height>
+              </size>
+            </property>
+          </widget>
+        </item>
+        <!-- Botón STOP -->
+        <item row="0" column="2">
+          <widget class="QPushButton" name="pushButton">
+            <property name="text">
+              <string>STOP</string>
+            </property>
+          </widget>
+        </item>
+        <!-- Controles de velocidad -->
+        <item row="1" column="0">
+          <widget class="QLabel" name="label_3">
+            <property name="text">
+              <string>Max. Linear [m/s]</string>
+            </property>
+          </widget>
+        </item>
+        <item row="1" column="1">
+          <widget class="QDoubleSpinBox" name="d_linearvel">
+            <property name="value">
+              <double>1.0</double>
+            </property>
+          </widget>
+        </item>
+        <item row="2" column="0">
+          <widget class="QLabel" name="label_2">
+            <property name="text">
+              <string>Max. Angular [rad/s]</string>
+            </property>
+          </widget>
+        </item>
+        <item row="2" column="1">
+          <widget class="QDoubleSpinBox" name="d_angularvel">
+            <property name="value">
+              <double>1.0</double>
+            </property>
+          </widget>
+        </item>
+        <!-- Configuración -->
+        <item row="3" column="0" colspan="3">
+          <widget class="QGroupBox" name="groupBox">
+            <property name="title">
+              <string>Configuration</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout">
+              <item>
+                <widget class="QRadioButton" name="rb_arcade">
+                  <property name="text">
+                    <string>Arcade</string>
+                  </property>
+                  <property name="checked">
+                    <bool>true</bool>
+                  </property>
+                </widget>
+              </item>
+              <item>
+                <widget class="QRadioButton" name="rb_individual">
+                  <property name="text">
+                    <string>Individual</string>
+                  </property>
+                </widget>
+              </item>
+            </layout>
+          </widget>
+        </item>
+      </layout>
+    </widget>
+  </widget>
+</ui>

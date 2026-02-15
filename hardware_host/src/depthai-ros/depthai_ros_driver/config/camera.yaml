@@ -1,0 +1,22 @@
+# --- camera.yaml ---
+/**:
+  ros__parameters:
+    camera:
+      i_pipeline_type: RGBD
+      i_enable_imu: false  # <<< Asegurar que está en false
+      i_nn_type: none      # <<< Recomendado para liberar recursos
+      i_publish_tf_from_calibration: true # <<< ¡CRUCIAL! Necesitamos el TF base
+      i_tf_base_frame: "oak"
+      i_tf_parent_frame: "oak-d-base-frame"
+    stereo:
+      i_subpixel: true
+      i_width: 640
+      i_height: 480
+      i_fps: 15.0
+    rgb:
+      i_width: 640
+      i_height: 480
+      i_fps: 15.0
+      i_set_isp_scale: false
+      i_output_isp: false  # Evita procesamiento adicional
+

@@ -1,0 +1,64 @@
+%YAML:1.0
+
+# --- INPUTS ---
+imu: 1
+num_of_cam: 2           # <--- WRACAMY DO 2
+
+# Tematy (Lokalnie)
+image0_topic: "/oak/left/image_raw"
+image1_topic: "/oak/right/image_raw"  # <--- ODKOMENTUJ TO
+imu_topic: "/data_raw"
+
+output_path: "/tmp/"
+
+# Pliki kalibracyjne
+cam0_calib: "left_oak.yaml"
+cam1_calib: "right_oak.yaml"    # <--- ODKOMENTUJ TO
+
+# Rozdzielczość
+image_width: 640
+image_height: 480
+
+# --- EXTRINSICS (Twoja sprawdzona macierz dla płaskiego IMU) ---
+estimate_extrinsic: 1
+
+# LEWA
+body_T_cam0: !!opencv-matrix
+   rows: 4
+   cols: 4
+   dt: d
+   data: [0, 0, 1, 0.05, -1, 0, 0, 0.0375, 0, -1, 0, 0, 0, 0, 0, 1]
+
+# PRAWA (Zwróć uwagę na -0.0375)
+body_T_cam1: !!opencv-matrix
+   rows: 4
+   cols: 4
+   dt: d
+   data: [0, 0, 1, 0.05, -1, 0, 0, -0.0375, 0, -1, 0, 0, 0, 0, 0, 1]
+
+# --- VINS Settings ---
+multiple_thread: 1
+equalize: 1
+max_cnt: 350            # Wracamy do rozsądnej liczby (Stereo to 2x więcej danych)
+min_dist: 25
+freq: 15                # Zgodnie z kamerą
+F_threshold: 1.0
+
+show_track: 0
+flow_back: 0
+
+# --- IMU Noise (Zostawmy te luźniejsze na start) ---
+acc_n: 0.1
+gyr_n: 0.01
+acc_w: 0.0002
+gyr_w: 0.00002
+g_norm: 9.81007
+
+# --- Sync ---
+estimate_td: 1
+td: 0.00
+max_solver_time: 0.025
+max_num_iterations: 6
+load_previous_pose_graph: 0
+save_image: 0
+pose_graph_save_path:"/root/pose_graph/"

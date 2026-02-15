@@ -1,0 +1,12 @@
+# Automatyczna detekcja plików tekstowych
+* text=auto
+
+# Wymuś linuxowe końce linii dla skryptów (bardzo ważne dla Raspberry Pi)
+*.sh text eol=lf
+*.bash text eol=lf
+*.py text eol=lf
+
+# Oznacz pliki binarne
+*.png binary
+*.jpg binary
+*.pdf binary
