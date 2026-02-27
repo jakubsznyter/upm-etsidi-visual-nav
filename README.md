@@ -22,7 +22,7 @@
 
 ## 📖 Project Overview
 
-This repository contains the complete software stack for an autonomous Unmanned Ground Vehicle (UGV) designed for GNSS-denied indoor environments. The project was developed as part of a Bachelor Thesis in Mechatronics Engineering at the Escuela Técnica Superior de Ingeniería y Diseño Industrial (ETSIDI) of the Universidad Politécnica de Madrid (UPM), within the Department of Electrical Engineering, Electronics, Automation and Applied Physics.
+This repository contains the complete software stack for an Unmanned Ground Vehicle (UGV) designed for GNSS-denied indoor environments. The project was developed as part of a Bachelor Thesis in Mechatronics Engineering at the Escuela Técnica Superior de Ingeniería y Diseño Industrial (ETSIDI) of the Universidad Politécnica de Madrid (UPM), within the Department of Electrical Engineering, Electronics, Automation and Applied Physics.
 
 The system implements a tightly-coupled **Visual-Inertial SLAM (VINS-Fusion)** on a low-cost, resource-constrained embedded platform. It addresses specific engineering challenges of the **ARM64 architecture** (Raspberry Pi 5) running **Ubuntu 24.04**, utilising a hybrid architecture where hardware drivers run natively, while the state estimator runs in an isolated, optimized container.
 
